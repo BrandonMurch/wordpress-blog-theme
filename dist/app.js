@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("jQuery(window).load(() => {\n  jQuery(\".comment-form-submit\").on(\"click\", () => {\n    jQuery(\".needs-validation\").addClass(\"was-validated\");\n    jQuery(\".needs-validation\").removeClass(\"needs-validation\");\n    console.log(\"Validated.\");\n  });\n});\n\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ })
 

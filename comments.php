@@ -14,12 +14,15 @@ $fields = [
 
 comment_form([
     "fields" => $fields,
-    "comment_field" => '<div class="form-group comment-textarea"><label for="comment">Comment</label>
-          <textarea name="comment" class="form-control " rows="8" cols="40" maxlength="65525" required></textarea></div>',
+    "comment_field" => '<div class="form-group comment-textarea">
+        <label for="comment">Comment</label>
+        <textarea name="comment" class="form-control " rows="8" cols="40" maxlength="65525" required> </textarea>
+      </div>',
     "title_reply" => "Leave a Comment!",
     "comment_notes_before" => "",
     "class_submit" => "btn btn-primary comment-form-submit",
     "class_container" => "container comment-form-container",
+    "class_form" => "needs-validation",
 ]);
 ?>
 

@@ -1,5 +1,25 @@
 <?php
 
+function add_jquery()
+{
+    wp_enqueue_script("jquery");
+}
+
+add_action("wp_enqueue_scripts", "add_jquery");
+
+function load_javascript()
+{
+    wp_register_script(
+        "customJS",
+        get_template_directory_uri() . "/dist/app.js",
+        [],
+        1,
+        "all"
+    );
+    wp_enqueue_script("customJS");
+}
+add_action("wp_enqueue_scripts", "load_javascript");
+
 function load_stylesheets()
 {
     wp_register_style(
