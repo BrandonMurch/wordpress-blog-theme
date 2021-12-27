@@ -37,19 +37,24 @@ comment_form([
   if ($comments) {
       foreach ($comments as $comment) {
           echo "<div class='card'>
-          <h5>
-            " .
+            <div class='card-body'>
+              <h5 class='card-title'>
+                " .
               $comment->comment_author .
               "
-          </h5>
-          <h6>
-            " .
+              </h5>
+              <h6 class='card-subtitle'>
+                " .
               $comment->comment_date .
               "
-          </h6>
-          <p>" .
+              </h6>
+              <p class='card-text'>" .
               $comment->comment_content .
-              "</p></div>";
+              "
+              </p>
+            </div>
+          </div>
+";
       }
   } else {
       echo "No comments found";
