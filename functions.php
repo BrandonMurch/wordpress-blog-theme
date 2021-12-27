@@ -29,4 +29,14 @@ register_nav_menus([
 
 add_action("after_setup_theme", "register_nav_menus");
 
+function move_comment_textarea($fields)
+{
+    $comment_box = $fields["comment"];
+    unset($fields["comment"]);
+    $fields["comment"] = $comment_box;
+    return $fields;
+}
+
+add_filter("comment_form_fields", "move_comment_textarea");
+
 ?>
