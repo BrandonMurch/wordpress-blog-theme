@@ -1,5 +1,11 @@
 body {
-  background-color: #ddd;
+  background-color: #eee;
+}
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 800px;
+  }
 }
 
 .comment-list-container {
@@ -19,6 +25,44 @@ body {
   margin: auto;
 }
 
+.form-control {
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: none;
+  transition: box-shadow opacity 0.5s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 255, 0.26) 0px 3px 6px,
+    rgba(0, 0, 255, 0.33) 0px 3px 6px;
+  outline: none;
+}
+
+.was-validated .form-control:invalid {
+  box-shadow: rgba(255, 0, 0, 0.26) 0px 3px 6px,
+    rgba(255, 0, 0, 0.33) 0px 3px 6px;
+}
+
+.was-validated .form-control:invalid:focus {
+  box-shadow: rgba(255, 0, 0, 0.46) 0px 3px 6px,
+    rgba(255, 0, 0, 0.53) 0px 3px 6px;
+}
+
+.was-validated .form-control:valid:focus {
+  box-shadow: rgba(0, 255, 0, 0.46) 0px 3px 6px,
+    rgba(0, 50, 0, 0.53) 0px 3px 6px;
+}
+
 .comment-form-submit {
   width: 100%;
+}
+
+.card {
+  background-color: transparent;
+  margin: 1rem auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 5px;
+  border: none;
 }
