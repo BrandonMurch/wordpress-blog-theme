@@ -34,7 +34,7 @@ function load_stylesheets()
     wp_register_style(
         "customCSS",
         get_template_directory_uri() . "/dist/style.css",
-        [],
+        ["bootstrap"],
         1,
         "all"
     );
@@ -42,12 +42,12 @@ function load_stylesheets()
 }
 add_action("wp_enqueue_scripts", "load_stylesheets");
 
-register_nav_menus([
-    "header" => __("Header Menu"),
-    "footer" => __("Footer Menu"),
-]);
-
-add_action("after_setup_theme", "register_nav_menus");
+// register_nav_menus([
+//     "header" => __("Header Menu"),
+//     "footer" => __("Footer Menu"),
+// ]);
+//
+// add_action("after_setup_theme", "register_nav_menus");
 
 function move_comment_textarea($fields)
 {
