@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/datetime.php";
+
 $fields = [
     "author" => '<div class="row">
 
@@ -46,9 +48,12 @@ comment_form([
               $comment->comment_author .
               "
               </h5>
-              <h6 class='card-subtitle'>
+              <h6 class='card-subtitle text-muted'>
                 " .
-              $comment->comment_date .
+              get_time_difference_string(
+                  current_time($required_format),
+                  get_comment_date($required_format)
+              ) .
               "
               </h6>
               <p class='card-text'>" .
