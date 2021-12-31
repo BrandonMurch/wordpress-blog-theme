@@ -5,7 +5,7 @@
     <h1>Search results: <?php the_search_query(); ?></h1>
   <?php while (have_posts()):
       the_post(); ?>
-      <?php get_template_part("post-card"); ?>
+      <?php get_template_part("post-list"); ?>
       </div>
   <?php
   endwhile; ?>
