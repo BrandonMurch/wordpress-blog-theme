@@ -30,10 +30,11 @@ comment_form([
 
 
 
-<div class="container comment-list-container">
+<ul class="container comment-list-container">
   <?php
   $args = [
       "status" => "approve",
+      "post_id" => get_the_id(),
   ];
 
   $comments_query = new WP_Comment_Query();
@@ -41,31 +42,31 @@ comment_form([
 
   if ($comments) {
       foreach ($comments as $comment) {
-          echo "<div class='card'>
-            <div class='card-body'>
-              <h5 class='card-title'>
-                " .
+          echo "<li class='card'>
+                  <div class='card-body'>
+                    <h5 class='card-title'>
+                      " .
               $comment->comment_author .
               "
-              </h5>
-              <h6 class='card-subtitle text-muted'>
-                " .
+                    </h5>
+                    <h6 class='card-subtitle text-muted'>
+                      " .
               get_time_difference_string(
                   current_time($required_format),
                   get_comment_date($required_format)
               ) .
               "
-              </h6>
-              <p class='card-text'>" .
+                    </h6>
+                    <p class='card-text'>" .
               $comment->comment_content .
               "
-              </p>
-            </div>
-          </div>
-";
+                    </p>
+                  </div>
+                </li>
+      ";
       }
   } else {
       echo "No comments found";
   }
   ?>
-</div>
+</ul>
