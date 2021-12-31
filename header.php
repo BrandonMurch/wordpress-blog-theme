@@ -18,7 +18,8 @@
       <a class="logo" href="<?php echo site_url(); ?>">
         bm
       </a>
-
-
+    </div>
+    <div class="search-container">
+      <?php get_search_form(); ?>
     </div>
 </header>
