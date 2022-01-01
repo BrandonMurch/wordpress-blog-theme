@@ -3,7 +3,8 @@
     <h1>
       <?php the_title(); ?>
     </h1>
-    <p class="text-muted"><?php the_date(); ?></p>
+    <?php  ?>
+    <p class="text-muted"><?php echo get_the_date(); ?></p>
     <p>
       <?php the_excerpt(); ?>
     </p>
