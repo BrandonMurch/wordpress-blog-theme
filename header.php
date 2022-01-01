@@ -19,5 +19,9 @@
         bm
       </a>
     </div>
+    <?php wp_nav_menu(array(
+        "theme_location" => "header",
+        'container_class' => "header-menu",
+    )) ?>
     <?php get_search_form(); ?>
 </header>

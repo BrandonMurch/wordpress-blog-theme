@@ -113,6 +113,13 @@ form.search-open {
   form.search-open .search-toggle {
     display: none; }
 
+.header-menu {
+  position: relative;
+  display: inline-block; }
+
+.header-menu ul {
+  list-style: none; }
+
 body {
   background-color: #EEE; }
 
