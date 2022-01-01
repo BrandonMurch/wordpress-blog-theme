@@ -8,7 +8,7 @@
       echo "<h1>Found ". $total_results ." results for the search <strong>". $query ."</strong></h1>";
   while (have_posts()):
       the_post();
-      get_template_part("post-list");
+      get_template_part("post-list-card");
     endwhile;
     get_template_part("post-list-navigation");
   else: ?>
