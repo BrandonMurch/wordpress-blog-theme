@@ -90,10 +90,35 @@
 /*!*******************!*\
   !*** ./js/app.js ***!
   \*******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("jQuery(window).load(() => {\n  jQuery('.comment-form-submit').on('click', () => {\n    jQuery('.needs-validation').addClass('was-validated');\n    jQuery('.needs-validation').removeClass('needs-validation');\n    console.log('Validated.');\n  });\n});\n\n\n//# sourceURL=webpack:///./js/app.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form-validation */ \"./js/form-validation.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./js/search.js\");\n\n\n\nObject(_form_validation__WEBPACK_IMPORTED_MODULE_0__[\"runFormValidation\"])();\nObject(_search__WEBPACK_IMPORTED_MODULE_1__[\"searchBarHandler\"])();\n\n\n//# sourceURL=webpack:///./js/app.js?");
+
+/***/ }),
+
+/***/ "./js/form-validation.js":
+/*!*******************************!*\
+  !*** ./js/form-validation.js ***!
+  \*******************************/
+/*! exports provided: runFormValidation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"runFormValidation\", function() { return runFormValidation; });\n\nconst runFormValidation = () => {\n  jQuery(window).load(() => {\n    jQuery('.comment-form-submit').on('click', () => {\n      jQuery('.needs-validation').addClass('was-validated');\n      jQuery('.needs-validation').removeClass('needs-validation');\n      console.log('Validated.');\n    });\n  });\n};\n\n\n//# sourceURL=webpack:///./js/form-validation.js?");
+
+/***/ }),
+
+/***/ "./js/search.js":
+/*!**********************!*\
+  !*** ./js/search.js ***!
+  \**********************/
+/*! exports provided: searchBarHandler */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst closeSearch = () => {\n    jQuery('#searchform')[0].reset();\n    jQuery('.searchform').removeClass('search-open');\n  };\n\nconst openSearch = () => {\n    jQuery('.searchform').addClass('search-open');\n    jQuery('#s').focus();\n  };\n\nconst stopSearchIfEmpty = (e) => {\n  if (jQuery('#s').val() == '') {\n    e.preventDefault();\n    return false;\n  }\n};\n\nconst searchBarHandler = () => {\n  jQuery(window).load(() => {\n      jQuery('.search-close').on('click', closeSearch);\n      jQuery('.search-toggle').on('click', openSearch);\n      jQuery('.searchsubmit-container').on('click', stopSearchIfEmpty);\n\n      jQuery(document).on('keydown', (e) => {\n          if (e.key === 'Escape') closeSearch();\n          if (e.key === 'Enter') stopSearchIfEmpty(e);\n        });\n    });\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
 
 /***/ })
 

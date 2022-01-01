@@ -2,16 +2,14 @@
 
 <main class="container">
   <?php if (have_posts()): ?>
-    <h1>Search results: <?php the_search_query(); ?></h1>
+    <h1>Search results: <?php  esc_html(the_search_query()); ?></h1>
   <?php while (have_posts()):
-      the_post(); ?>
-      <?php get_template_part("post-list"); ?>
-      </div>
-  <?php
-  endwhile; ?>
-    <?php get_template_part("post-list-navigation"); ?>
-  <?php else: ?>
-    <!-- no posts found -->
+      the_post();
+      get_template_part("post-list");
+    endwhile;
+    get_template_part("post-list-navigation");
+  else: ?>
+    <h1>No results found for <strong><?php esc_html(the_search_query()) ?></strong>.</h1>
   <?php endif; ?>
 </main>
 

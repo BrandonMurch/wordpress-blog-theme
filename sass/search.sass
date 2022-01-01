@@ -1,0 +1,61 @@
+.searchform
+  height: 50px
+  width: 50px
+  display: inline-block
+  float: right
+  margin: 35px 20px 0 0
+  transition: width 0.5s ease-in-out
+  background-color: rgba(255,255,255,0.5)
+  border-radius: 20px
+  border: solid 1px rgb(50,50,50)
+  overflow: hidden
+  position: relative
+
+form.hide-submit input[type="submit"]
+  display: none
+
+#s:focus-visible
+  outline: none
+
+#s
+  position: absolute
+  right: 50px
+  border: none
+  background-color: transparent
+  height: 50px
+  font-size: 30px
+
+
+.search-toggle
+  position: absolute
+  right: 0
+  padding: 0
+  border: none
+  background-color: transparent
+
+.search-close
+  position: absolute
+  right: 50px
+  border: none
+  background-color: transparent
+  height: 50px
+  padding: 0
+
+
+.searchsubmit-container
+  display: none
+
+form.search-open
+  width: 50vw
+
+  #s
+    width: calc(50vw - 100px)
+    left: 20px
+
+  .searchsubmit-container
+    display: inline-block
+    position: absolute
+    right: 0
+
+  .search-toggle
+    display: none
