@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 
 <main class="container">
-  <?php if (have_posts()): ?>
-    <h1>Search results: <?php  esc_html(the_search_query()); ?></h1>
-  <?php while (have_posts()):
+  <?php if (have_posts()):
+      global $wp_query;
+      $total_results = $wp_query->found_posts;
+      $query =  esc_html(get_search_query());
+      echo "<h1>Found ". $total_results ." results for the search <strong>". $query ."</strong></h1>";
+  while (have_posts()):
       the_post();
       get_template_part("post-list");
     endwhile;
