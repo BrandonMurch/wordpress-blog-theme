@@ -7,10 +7,35 @@
   display: inline
   margin-right: 20px
 
-.article-meta
-  display: flex
-  justify-content: center
-  align-items: center
+@mixin article-meta
+    display: flex
+    justify-content: center
+    align-items: center
+
+.article-meta-single
+  @include article-meta
+  width: 50%
+
+.article-author
+  @include article-meta
+  width: 60%
+  max-width: 300px
+
+
+
+.article-date
+  @include article-meta
+  justify-content: space-evenly
+  width: 40%
+
+  @media (min-width: 500px)
+    width: calc(100% - 300px)
+
+
+  @media (max-width: 800px)
+    flex-wrap: wrap
+
 
 .article-meta-container
   margin: 2rem
+  display: flex

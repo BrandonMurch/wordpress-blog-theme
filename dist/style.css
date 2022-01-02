@@ -215,13 +215,35 @@ img.attachment-large {
   display: inline;
   margin-right: 20px; }
 
-.article-meta {
+.article-meta-single {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 50%; }
+
+.article-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  max-width: 300px; }
+
+.article-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%; }
+  @media (min-width: 500px) {
+    .article-date {
+      width: calc(100% - 300px); } }
+  @media (max-width: 800px) {
+    .article-date {
+      flex-wrap: wrap; } }
 
 .article-meta-container {
-  margin: 2rem; }
+  margin: 2rem;
+  display: flex; }
 
 body {
   background-color: #EEE; }
