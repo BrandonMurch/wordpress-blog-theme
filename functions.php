@@ -61,11 +61,6 @@ function move_comment_textarea($fields)
 }
 add_filter("comment_form_fields", "move_comment_textarea");
 
-function enable_custom_logo()
-{
-    add_theme_support("custom-logo");
-}
 
-add_action("after_theme_setup", "enable_custom_logo");
-
-?>
+add_theme_support("custom-logo");
+add_theme_support('post-thumbnails');
