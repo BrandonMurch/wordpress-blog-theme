@@ -5,9 +5,7 @@
   float: right
   margin: 35px 20px 0 0
   transition: width 0.5s ease-in-out
-  background-color: rgba(255,255,255,0.5)
   border-radius: 20px
-  border: solid 1px rgb(50,50,50)
   overflow: hidden
   position: relative
 
@@ -24,6 +22,13 @@ form.hide-submit input[type="submit"]
   background-color: transparent
   height: 50px
   font-size: 30px
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)60%, rgba(0,0,0,0))
+  border-radius: 20px
+  padding-left: 20px
+  padding-right: 50px
+  box-sizing: border-box
+
+
 
 
 .search-toggle
@@ -47,10 +52,11 @@ form.hide-submit input[type="submit"]
 
 form.search-open
   width: 50vw
-
   #s
+
     width: calc(50vw - 100px)
     left: 20px
+    right: 0
 
   .searchsubmit-container
     display: inline-block
