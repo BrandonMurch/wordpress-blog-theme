@@ -43,16 +43,16 @@ $has_been_modifed =
     </div>
 
     <div class="<?php echo $has_been_modifed
-        ? "article-date"
+        ? "article-date-container"
         : "article-meta-single"; ?>">
-      <p class="text-muted">Created on <br> <strong><?php echo the_time(
+      <p class="text-muted article-date">Created on <br> <strong><?php echo the_time(
           get_option("date_format")
       ); ?></strong>
 
 
 
       <?php if ($has_been_modifed): ?>
-        <p class="text-muted">Last updated <br> <strong><?php echo get_the_modified_date(); ?></strong>
+        <p class="text-muted article-date">Last updated <br> <strong><?php echo get_the_modified_date(); ?></strong>
       <?php endif; ?>
       </p>
     </div>

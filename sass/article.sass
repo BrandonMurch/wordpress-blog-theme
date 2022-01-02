@@ -12,18 +12,23 @@
     justify-content: center
     align-items: center
 
+    @media (max-width: 400px)
+      width: 100%
+      max-width: 100%
+
 .article-meta-single
-  @include article-meta
   width: 50%
+  @include article-meta
 
 .article-author
-  @include article-meta
   width: 60%
   max-width: 300px
+  @include article-meta
 
+  @media (max-width: 400px)
+    margin-bottom: 1rem
 
-
-.article-date
+.article-date-container
   @include article-meta
   justify-content: space-evenly
   width: 40%
@@ -36,6 +41,16 @@
     flex-wrap: wrap
 
 
+.article-date
+  @media (max-width: 400px)
+    font-size: 0.8rem
+    // width: 100%
+    // text-align: center
+
+
 .article-meta-container
   margin: 2rem
   display: flex
+
+  @media (max-width: 400px)
+    flex-wrap: wrap
