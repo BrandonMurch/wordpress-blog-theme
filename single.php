@@ -18,9 +18,12 @@ $author_name =
 
   <div class="row article-meta-container">
     <div class="col article-meta">
-      <img class="article-avatar" src="<?php echo esc_url(
-          get_the_author_meta("custom-avatar", $author_id)
-      ); ?>" alt="<?php echo $author_name; ?>'s Avatar'">
+      <?php if (get_the_author_meta("custom-avatar", $author_id)): ?>
+        <img class="article-avatar" src="<?php echo esc_url(
+            get_the_author_meta("custom-avatar", $author_id)
+        ); ?>" alt="<?php echo $author_name; ?>'s Avatar'">
+
+      <?php endif; ?>
 
       <p class="text-muted">
 
