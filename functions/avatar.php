@@ -2,7 +2,6 @@
 
 /*
  * Custom Avatar Without a Plugin
- *
  *  Modified from original code by Paolo (https://userswp.io/wordpress-profile-picture/)
  */
 
@@ -37,7 +36,6 @@ function avatar_admin_media_scripts()
 				});
 				file_frame.on('select', function() {
 					var attachment = file_frame.state().get('selection').first().toJSON();
-          console.log(attachment.sizes)
 					$button.siblings('#custom-avatar').val( attachment.sizes['avatar-large'].url );
 					jQuery('.custom-avatar-preview').attr( 'src', attachment.sizes['avatar-large'].url );
 				});
