@@ -42,11 +42,12 @@ function load_stylesheets()
 }
 add_action("wp_enqueue_scripts", "load_stylesheets");
 
-function register_theme_nav_menus(){
-  register_nav_menus([
+function register_theme_nav_menus()
+{
+    register_nav_menus([
       "header" => __("Main Menu"),
-      "footer" => __("Footer Menu"),
-  ]);
+        "footer" => __("Footer Menu"),
+    ]);
 }
 
 add_action("init", "register_theme_nav_menus");
@@ -58,7 +59,13 @@ function move_comment_textarea($fields)
     $fields["comment"] = $comment_box;
     return $fields;
 }
-
 add_filter("comment_form_fields", "move_comment_textarea");
+
+function enable_custom_logo()
+{
+    add_theme_support("custom-logo");
+}
+
+add_action("after_theme_setup", "enable_custom_logo");
 
 ?>
