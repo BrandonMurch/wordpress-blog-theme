@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/functions/avatar.php";
+
 function add_jquery()
 {
     wp_enqueue_script("jquery");
@@ -42,15 +44,12 @@ function load_stylesheets()
 }
 add_action("wp_enqueue_scripts", "load_stylesheets");
 
-function register_theme_nav_menus()
-{
+add_action("init", function () {
     register_nav_menus([
-      "header" => __("Main Menu"),
+        "header" => __("Main Menu"),
         "footer" => __("Footer Menu"),
     ]);
-}
-
-add_action("init", "register_theme_nav_menus");
+});
 
 function move_comment_textarea($fields)
 {
@@ -61,6 +60,17 @@ function move_comment_textarea($fields)
 }
 add_filter("comment_form_fields", "move_comment_textarea");
 
-
 add_theme_support("custom-logo");
-add_theme_support('post-thumbnails');
+add_theme_support("post-thumbnails");
+
+if (function_exists("add_image_size")) {
+    add_image_size("avatar", $width = 48, $height = 48, $crop = false);
+    add_image_size("avatar-large", $width = 96, $height = 96, $crop = false);
+}
+
+add_filter("image_size_names_choose", function ($sizes) {
+    return array_merge($sizes, [
+        "avatar" => __("Avatar"),
+        "avatar-large" => __("Large Avatar"),
+    ]);
+});
