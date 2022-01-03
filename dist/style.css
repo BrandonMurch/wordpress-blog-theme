@@ -219,15 +219,14 @@ form.search-open {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    width: 100%; }
   @media (max-width: 700px) {
     .card-image-wrapper {
-      flex-basis: 300px; }
-      .card-image-wrapper img.attachment-large {
-        width: 100%; } }
+      flex-basis: 300px; } }
   @media (min-width: 701px) {
     .card-image-wrapper img.attachment-large {
-      height: 100%; } }
+      min-height: 100%; } }
 
 .card-text-container {
   flex-basis: 500px;
