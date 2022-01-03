@@ -308,6 +308,23 @@ form.search-open {
     .article-meta-container {
       flex-wrap: wrap; } }
 
+.tag-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0; }
+  .tag-list .tag {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #555;
+    cursor: pointer; }
+    .tag-list .tag:hover {
+      background-color: #666; }
+    .tag-list .tag a {
+      text-decoration: none;
+      color: white; }
+
 body {
   background-color: #EEE; }
 

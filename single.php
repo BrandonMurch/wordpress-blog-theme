@@ -17,7 +17,7 @@ $has_been_modifed =
       the_post_thumbnail("large");
   } ?>
 
-  <h1 class="display-3 article-title"><?php the_title(); ?></h1>
+  <h1 class="display-3 article-title"><?php esc_html(the_title()); ?></h1>
 
   <div class="article-meta-container">
     <div class="<?php echo $has_been_modifed
@@ -33,9 +33,8 @@ $has_been_modifed =
       <p class="text-muted">
 
         Written by <br>
-         <a class="text-muted" href="<?php echo get_the_author_meta(
-             "url",
-             $author_id
+         <a class="text-muted" href="<?php echo esc_url(
+             get_the_author_meta("url", $author_id)
          ); ?>">
           <strong> <?php echo $author_name; ?> </strong>
         </a>
@@ -60,16 +59,18 @@ $has_been_modifed =
   </div>
   <?php the_content(); ?>
 
+  <h1 class="text-center">Share this article: </h1>
   <?php get_template_part("socials"); ?>
 
-  <ul>
-    <?php
-    $tags = wp_get_post_tags();
-    foreach ($tags as $tag) {
-        echo "<li>" . $tag->name . "</li>";
-    }
-    ?>
+  <h1 class="text-center">Read more about:</h1>
+  <ul class="tag-list">
+    <?php echo get_the_tag_list(
+        "<li class='tag'>",
+        "</li><li class='tag'>",
+        "</li>"
+    ); ?>
   </ul>
+
 
 
   <?php if (comments_open() || get_comments_number()):
