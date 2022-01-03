@@ -5,25 +5,59 @@
   border-radius: 5px
   border: none
   overflow: hidden
-  padding: 1rem
+  display: flex
+  flex-direction: row
+  align-items: stretch
 
-  img.attachment-thumbnail
-    float: right
+  @media (min-width: 701px)
+    &:nth-child(even)
+      flex-direction: row-reverse
+
+  @media (max-width: 700px)
+    flex-direction: column
 
   &:hover
     background-color: rgba(255,255,255,0.7)
 
+.card-image-wrapper
+  flex-basis: 400px
+  position: relative
+  overflow: hidden
+
+  // Center image in wrapper
+  img.attachment-large
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+  @media (max-width: 700px)
+    flex-basis: 300px
+
+    img.attachment-large
+      width: 100%
+
+  @media (min-width: 701px)
+    img.attachment-large
+      height: 100%
+
+.card-text-container
+  flex-basis: 500px
+  padding: 1rem
+
+  @media (max-width: 700px)
+    flex-basis: auto
+
+  .card-title
+    text-align: center
+    margin-bottom: 2rem
+
+  .card-action
+    text-align: center
+
+
 .card-link-overlay
   text-decoration: none
-  color: #555
   inset: 0
   position: absolute
   z-index: 2
-
-
-.card-title
-  text-align: center
-  margin-bottom: 2rem
-
-.card-action
-  text-align: center

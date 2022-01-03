@@ -2,11 +2,15 @@
   <?php $has_been_modifed =
       get_the_time(get_option("date_format")) != get_the_modified_date(); ?>
 
-      <!-- Div tag so the image can float -->
-      <div>
-        <?php if (has_post_thumbnail()) {
-            the_post_thumbnail("thumbnail");
-        } ?>
+
+      <?php if (has_post_thumbnail()): ?>
+        <div class="card-image-wrapper">
+          <?php the_post_thumbnail("large"); ?>
+        </div>
+      <?php endif; ?>
+
+
+      <div class="card-text-container">
         <h1 class="card-title">
         <?php the_title(); ?>
         </h1>
@@ -24,19 +28,22 @@
           </div>
 
         </div>
-      </div>
 
 
       <?php the_excerpt(); ?>
       </p>
 
-
-
-      <!-- allow link to span the entire card, only display text within the link for accessibilty readers -->
       <h2 class="card-action" aria-hidden>Click to read more</h2>
       <a href="<?php the_permalink(); ?>" class="card-link-overlay">
         <p class="hidden">Click to read more</p>
       </a>
+
+    </div>
+
+
+
+      <!-- allow link to span the entire card, only display text within the link for accessibilty readers -->
+
 
 
 </article>
