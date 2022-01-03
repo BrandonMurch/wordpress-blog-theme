@@ -22,14 +22,11 @@ form.hide-submit input[type="submit"]
   background-color: transparent
   height: 50px
   font-size: 30px
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)60%, rgba(0,0,0,0))
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8)60%, rgba(0,0,0,0))
   border-radius: 20px
   padding-left: 20px
   padding-right: 50px
   box-sizing: content-box
-
-
-
 
 .search-toggle
   position: absolute
@@ -54,9 +51,10 @@ form.hide-submit input[type="submit"]
 
 form.search-open
   width: 50vw
+  max-width: 500px
   #s
-
     width: calc(50vw - 100px)
+    max-width: 400px
     left: 20px
     right: 0
 

@@ -80,7 +80,7 @@ form.hide-submit input[type="submit"] {
   background-color: transparent;
   height: 50px;
   font-size: 30px;
-  background-image: linear-gradient(to right, white, white 60%, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 60%, rgba(0, 0, 0, 0));
   border-radius: 20px;
   padding-left: 20px;
   padding-right: 50px;
@@ -107,9 +107,11 @@ form.hide-submit input[type="submit"] {
   display: none; }
 
 form.search-open {
-  width: 50vw; }
+  width: 50vw;
+  max-width: 500px; }
   form.search-open #s {
     width: calc(50vw - 100px);
+    max-width: 400px;
     left: 20px;
     right: 0; }
   form.search-open .searchsubmit-container {
@@ -314,13 +316,14 @@ form.search-open {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  z-index: -1; }
+  z-index: -1;
+  min-width: 700px; }
 
 .custom-shape-divider-top-1641222853 svg {
   position: relative;
   display: block;
   width: calc(252% + 1.3px);
-  height: 300px; }
+  height: 325px; }
 
 body {
   background-color: #EEE; }
