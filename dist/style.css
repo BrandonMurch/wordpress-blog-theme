@@ -189,9 +189,8 @@ form.search-open {
 .email:hover {
   background-color: #5e5e5e; }
 
-img.attachment-large {
-  max-width: 100%;
-  height: auto; }
+.single-post img.attachment-large {
+  max-width: 100%; }
 
 .card {
   background-color: rgba(255, 255, 255, 0.4);
@@ -200,25 +199,53 @@ img.attachment-large {
   border-radius: 5px;
   border: none;
   overflow: hidden;
-  padding: 1rem; }
-  .card img.attachment-thumbnail {
-    float: right; }
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; }
+  @media (min-width: 701px) {
+    .card:nth-child(even) {
+      flex-direction: row-reverse; } }
+  @media (max-width: 700px) {
+    .card {
+      flex-direction: column; } }
   .card:hover {
     background-color: rgba(255, 255, 255, 0.7); }
 
+.card-image-wrapper {
+  flex-basis: 400px;
+  position: relative;
+  overflow: hidden; }
+  .card-image-wrapper img.attachment-large {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  @media (max-width: 700px) {
+    .card-image-wrapper {
+      flex-basis: 300px; }
+      .card-image-wrapper img.attachment-large {
+        width: 100%; } }
+  @media (min-width: 701px) {
+    .card-image-wrapper img.attachment-large {
+      height: 100%; } }
+
+.card-text-container {
+  flex-basis: 500px;
+  padding: 1rem; }
+  @media (max-width: 700px) {
+    .card-text-container {
+      flex-basis: auto; } }
+  .card-text-container .card-title {
+    text-align: center;
+    margin-bottom: 2rem; }
+  .card-text-container .card-action {
+    text-align: center; }
+
 .card-link-overlay {
   text-decoration: none;
-  color: #555;
   inset: 0;
   position: absolute;
   z-index: 2; }
-
-.card-title {
-  text-align: center;
-  margin-bottom: 2rem; }
-
-.card-action {
-  text-align: center; }
 
 .article-title {
   text-align: center;
