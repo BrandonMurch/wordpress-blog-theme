@@ -189,9 +189,6 @@ form.search-open {
 .email:hover {
   background-color: #5e5e5e; }
 
-.single-post img.attachment-large {
-  max-width: 100%; }
-
 .card {
   background-color: rgba(255, 255, 255, 0.4);
   margin: 1rem auto;
@@ -247,66 +244,48 @@ form.search-open {
   position: absolute;
   z-index: 2; }
 
+.article img.attachment-large {
+  max-width: 100%; }
+
+.article .subtitle {
+  margin-top: 2rem; }
+
 .article-title {
   text-align: center;
   margin-top: 2rem; }
 
-.article-avatar {
-  border-radius: 100%;
-  display: inline;
-  margin-right: 20px; }
-
-.article-meta-single {
-  width: 50%;
+.article-meta-container {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin: 1rem 0; }
   @media (max-width: 400px) {
-    .article-meta-single {
-      width: 100%;
-      max-width: 100%; } }
+    .article-meta-container {
+      flex-wrap: wrap; } }
 
 .article-author {
-  width: 60%;
-  max-width: 300px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-basis: 250px; }
   @media (max-width: 400px) {
     .article-author {
-      width: 100%;
-      max-width: 100%; } }
-  @media (max-width: 400px) {
-    .article-author {
-      margin-bottom: 1rem; } }
+      margin-bottom: 1rem;
+      flex-basis: 100%; } }
+  .article-author .article-avatar {
+    border-radius: 100%;
+    margin-right: 20px; }
 
 .article-date-container {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  width: 40%; }
-  @media (max-width: 400px) {
-    .article-date-container {
-      width: 100%;
-      max-width: 100%; } }
-  @media (min-width: 500px) {
-    .article-date-container {
-      width: calc(100% - 300px); } }
-  @media (max-width: 800px) {
-    .article-date-container {
-      flex-wrap: wrap; } }
-
-@media (max-width: 400px) {
-  .article-date {
-    font-size: 0.8rem; } }
-
-.article-meta-container {
-  margin: 2rem;
-  display: flex; }
-  @media (max-width: 400px) {
-    .article-meta-container {
-      flex-wrap: wrap; } }
+  flex-grow: 1;
+  flex-wrap: wrap; }
+  @media (max-width: 600px) {
+    .article-date-container .article-date {
+      font-size: 0.8rem; } }
 
 .tag-list {
   list-style: none;

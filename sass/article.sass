@@ -1,56 +1,47 @@
+@mixin center-flex
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+.article
+  img.attachment-large
+    max-width: 100%
+
+  .subtitle
+    margin-top: 2rem
+
+
 .article-title
   text-align: center
   margin-top: 2rem
 
-.article-avatar
-  border-radius: 100%
-  display: inline
-  margin-right: 20px
+.article-meta-container
+  @include center-flex
+  margin: 1rem 0
 
-@mixin article-meta
-    display: flex
-    justify-content: center
-    align-items: center
-
-    @media (max-width: 400px)
-      width: 100%
-      max-width: 100%
-
-.article-meta-single
-  width: 50%
-  @include article-meta
+  @media (max-width: 400px)
+    flex-wrap: wrap
 
 .article-author
-  width: 60%
-  max-width: 300px
-  @include article-meta
+  @include center-flex
+  flex-basis: 250px
 
   @media (max-width: 400px)
     margin-bottom: 1rem
+    flex-basis: 100%
+
+  .article-avatar
+    border-radius: 100%
+    margin-right: 20px
 
 .article-date-container
-  @include article-meta
+  @include center-flex
   justify-content: space-evenly
-  width: 40%
-
-  @media (min-width: 500px)
-    width: calc(100% - 300px)
+  flex-grow: 1
+  flex-wrap: wrap
 
 
-  @media (max-width: 800px)
-    flex-wrap: wrap
-
-
-.article-date
-  @media (max-width: 400px)
-    font-size: 0.8rem
-    // width: 100%
-    // text-align: center
-
-
-.article-meta-container
-  margin: 2rem
-  display: flex
-
-  @media (max-width: 400px)
-    flex-wrap: wrap
+  .article-date
+    @media (max-width: 600px)
+      font-size: 0.8rem
