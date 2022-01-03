@@ -3,7 +3,7 @@
   height="24px"
   viewBox="0 0 24 24"
   width="24px"
-  fill="#000000"
+  class="close-icon"
 >
   <title>Close Search</title>
   <desc>Press to close the associated search bar</desc>

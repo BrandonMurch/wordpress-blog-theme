@@ -1,5 +1,5 @@
 .logo-container {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -121,6 +121,9 @@ form.search-open {
   form.search-open .search-close {
     opacity: 1;
     transition: opacity 0.2s 0.3s ease-in-out; }
+
+.search-icon, .close-icon {
+  fill: white; }
 
 .header-menu {
   position: relative;
@@ -303,6 +306,22 @@ form.search-open {
     .tag-list .tag a {
       text-decoration: none;
       color: white; }
+
+.custom-shape-divider-top-1641222853 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1; }
+
+.custom-shape-divider-top-1641222853 svg {
+  position: relative;
+  display: block;
+  width: calc(252% + 1.3px);
+  height: 300px; }
 
 body {
   background-color: #EEE; }
