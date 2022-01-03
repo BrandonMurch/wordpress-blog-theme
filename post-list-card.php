@@ -12,18 +12,21 @@
 
       <div class="card-text-container">
         <h1 class="card-title">
-        <?php the_title(); ?>
+        <?php esc_html(the_title()); ?>
         </h1>
         <div class="row">
           <div class="col text-center">
-            <p class="text-muted">Written by <br> <strong> <?php the_author(); ?> </strong></p>
+            <p class="text-muted">Written by <br>
+              <strong> <?php esc_html(the_author()); ?> </strong>
+            </p>
             <p>
           </div>
 
           <div class="col text-center">
             <p class="text-muted"> <?php echo $has_been_modifed
                 ? "Last updated"
-                : "Created on"; ?> <br> <strong><?php the_modified_date(); ?></strong>
+                : "Created on"; ?> <br>
+                <strong><?php esc_html(the_modified_date()); ?></strong>
             </p>
           </div>
 
