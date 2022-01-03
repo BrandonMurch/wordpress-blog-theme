@@ -74,3 +74,7 @@ add_filter("image_size_names_choose", function ($sizes) {
         "avatar-large" => __("Large Avatar"),
     ]);
 });
+
+add_filter("excerpt_length", function () {
+    return 20;
+});
