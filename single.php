@@ -11,7 +11,7 @@ $has_been_modifed =
     get_the_time(get_option("date_format")) != get_the_modified_date();
 ?>
 
-<main class="container">
+<main class="container single-post">
 
   <?php if (has_post_thumbnail()) {
       the_post_thumbnail("large");
@@ -62,7 +62,15 @@ $has_been_modifed =
 
   <?php get_template_part("socials"); ?>
 
-  <p><?php wp_get_post_tags(); ?></p>
+  <ul>
+    <?php
+    $tags = wp_get_post_tags();
+    foreach ($tags as $tag) {
+        echo "<li>" . $tag->name . "</li>";
+    }
+    ?>
+  </ul>
+
 
   <?php if (comments_open() || get_comments_number()):
       comments_template();
