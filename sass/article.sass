@@ -5,6 +5,9 @@
 
 
 .article
+  position: relative
+  z-index: 5
+
   img.attachment-large
     max-width: 100%
 
@@ -15,10 +18,11 @@
 .article-title
   text-align: center
   margin-top: 2rem
+  font-weight: bold
 
 .article-meta-container
   @include center-flex
-  margin: 1rem 0
+  margin: 2rem 0
 
   @media (max-width: 400px)
     flex-wrap: wrap

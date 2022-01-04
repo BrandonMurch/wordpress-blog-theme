@@ -34,7 +34,6 @@
 
 
       <?php the_excerpt(); ?>
-      </p>
 
       <!-- allow link to span the entire card, only display text within the link for accessibilty readers -->
       <h2 class="card-action" aria-hidden>Click to read more</h2>
