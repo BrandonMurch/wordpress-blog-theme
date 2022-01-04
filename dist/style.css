@@ -4,10 +4,8 @@
   height: 90px;
   border-radius: 50%;
   text-align: center;
-  margin: 20px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  display: inline-block; }
+  transition: all 0.5s ease-in-out; }
 
 .logo {
   font-size: 50px;
@@ -56,24 +54,20 @@
 .was-validated .form-control:valid:focus {
   box-shadow: rgba(0, 255, 0, 0.46) 0 3px 6px, rgba(0, 50, 0, 0.53) 0 3px 6px; }
 
-.searchform {
+form.searchform {
   height: 50px;
   width: 50px;
-  display: inline-block;
-  float: right;
-  margin: 35px 20px 0 0;
+  position: absolute;
+  right: 0;
   transition: width 0.5s ease-in-out;
   border-radius: 20px;
-  overflow: hidden;
-  position: relative; }
+  overflow: hidden; }
 
 form.hide-submit input[type="submit"] {
   display: none; }
 
-#s:focus-visible {
-  outline: none; }
-
-#s {
+.search-text {
+  outline: none;
   position: absolute;
   right: 50px;
   border: none;
@@ -107,11 +101,9 @@ form.hide-submit input[type="submit"] {
   display: none; }
 
 form.search-open {
-  width: 50vw;
-  max-width: 500px; }
-  form.search-open #s {
-    width: calc(50vw - 100px);
-    max-width: 400px;
+  width: 100%; }
+  form.search-open .search-text {
+    width: calc(100% - 100px);
     left: 20px;
     right: 0; }
   form.search-open .searchsubmit-container {
@@ -125,6 +117,7 @@ form.search-open {
     transition: opacity 0.2s 0.3s ease-in-out; }
 
 .search-icon, .close-icon {
+  height: 50px;
   fill: white;
   transition: all 0.1s ease-in-out;
   cursor: pointer; }
@@ -320,25 +313,39 @@ form.search-open {
 .header {
   position: relative;
   margin-bottom: 60px;
-  background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%); }
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%);
+  display: flex;
+  align-items: center; }
 
-.header-background svg {
+.header-border {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  fill: #185a9dff;
-  transform: scaleX(-1) translateY(100%); }
+  transform: scaleX(-1) translateY(100%);
+  left: -20px;
+  width: calc(100% + 20px);
+  fill: #185a9dff; }
 
-.header-menu ul {
-  display: flex;
-  padding: 0;
-  max-width: calc(45vw - 110px); }
-  .header-menu ul li {
+.header-menu {
+  flex-grow: 1;
+  margin: 10px; }
+  .header-menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+  .header-menu li {
     margin: 0 0.5rem; }
-    .header-menu ul li a {
+    .header-menu li a {
       color: white;
       text-decoration: none;
       font-size: 1.5rem; }
+
+.search-container {
+  flex-grow: 100;
+  position: relative;
+  height: 50px;
+  max-width: 500px; }
 
 body {
   background-color: #EEE; }

@@ -1,21 +1,17 @@
-.searchform
+form.searchform
   height: 50px
   width: 50px
-  display: inline-block
-  float: right
-  margin: 35px 20px 0 0
+  position: absolute
+  right: 0
   transition: width 0.5s ease-in-out
   border-radius: 20px
   overflow: hidden
-  position: relative
 
 form.hide-submit input[type="submit"]
   display: none
 
-#s:focus-visible
+.search-text
   outline: none
-
-#s
   position: absolute
   right: 50px
   border: none
@@ -50,11 +46,9 @@ form.hide-submit input[type="submit"]
   display: none
 
 form.search-open
-  width: 50vw
-  max-width: 500px
-  #s
-    width: calc(50vw - 100px)
-    max-width: 400px
+  width: 100%
+  .search-text
+    width: calc(100% - 100px)
     left: 20px
     right: 0
 
@@ -71,6 +65,7 @@ form.search-open
     transition: opacity 0.2s 0.3s ease-in-out
 
 .search-icon, .close-icon
+  height: 50px
   fill: white
   transition: all 0.1s ease-in-out
   cursor: pointer
