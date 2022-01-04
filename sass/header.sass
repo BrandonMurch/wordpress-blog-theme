@@ -3,7 +3,8 @@
   margin-bottom: 7vw
   padding: 20px
   padding-bottom: 0
-  background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%)
+  background-image: linear-gradient(to bottom, $accent1 -50%, $accent2 95%)
+  // background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%)
   display: flex
   align-items: center
   z-index: 1
@@ -15,7 +16,7 @@
     left: -20px
     // Account for padding
     width: calc(100% + 20px)
-    fill: #185a9dff
+    fill: $accent2
 
 .header-menu
   flex-grow: 1
@@ -29,10 +30,14 @@
 
   li
     margin: 0 0.5rem
-    a
-      color: white
-      text-decoration: none
-      font-size: 1.5rem
+
+    &:hover
+      font-weight: 500
+
+  a
+    color: white
+    text-decoration: none
+    font-size: 1.5rem
 
 .search-container
   flex-grow: 100
