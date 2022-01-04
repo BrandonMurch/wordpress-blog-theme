@@ -41,23 +41,19 @@
   font-style: normal; }
 
 .logo-container {
-  background-color: rgba(0, 0, 0, 0.2);
   width: 90px;
   height: 90px;
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2); }
+  transition: all 0.1s ease-in-out; }
 
 .logo {
   font-size: 50px;
-  color: white; }
-
-.logo-container:hover {
-  transform: scale(1.1);
-  border-radius: 40%; }
-  .logo-container:hover .logo {
+  color: white;
+  transition: all 0.2s ease-in-out; }
+  .logo:hover {
+    text-shadow: -0.4px -0.4px 0 white, 0.4px -0.4px 0 white, -0.4px 0.4px 0 white, 0.4px 0.4px 0 white;
     color: white; }
 
 .comment-list-container {
@@ -236,7 +232,7 @@ form.search-open {
   background-color: #5e5e5e; }
 
 .card {
-  background-color: #EEE;
+  background-color: #FCF7F8;
   margin: 1rem auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
   border-radius: 5px;
@@ -356,8 +352,8 @@ form.search-open {
   position: relative;
   margin-bottom: 7vw;
   padding: 20px;
-  padding-bottom: 0;
-  background-image: linear-gradient(to bottom, #34e89e -50%, #0f3443 95%);
+  padding-bottom: 50px;
+  background-image: linear-gradient(to bottom right, #30cfd0 -10%, #330867 100%);
   display: flex;
   align-items: center;
   z-index: 1; }
@@ -365,10 +361,13 @@ form.search-open {
 .header-border {
   position: absolute;
   bottom: 0;
-  transform: scaleX(-1) translateY(85%) scaleY(0.7);
+  transform: scaleX(-1);
   left: -20px;
   width: calc(100% + 20px);
-  fill: #0f3443; }
+  fill: #FCF7F8; }
+  @media (min-width: 600px) {
+    .header-border {
+      transform: scale(-1, 0.6) translateY(36%); } }
 
 .header-menu {
   flex-grow: 1;
@@ -380,12 +379,14 @@ form.search-open {
     width: 100%; }
   .header-menu li {
     margin: 0 0.5rem; }
-    .header-menu li:hover {
-      font-weight: 500; }
   .header-menu a {
+    transition: all 0.1s ease-in-out;
     color: white;
     text-decoration: none;
     font-size: 1.5rem; }
+    .header-menu a:hover, .header-menu a:focus {
+      text-shadow: -0.4px -0.4px 0 white, 0.4px -0.4px 0 white, -0.4px 0.4px 0 white, 0.4px 0.4px 0 white;
+      outline: none; }
 
 .search-container {
   flex-grow: 100;
@@ -394,7 +395,7 @@ form.search-open {
   max-width: 500px; }
 
 body {
-  background-color: #EEE;
+  background-color: #FCF7F8;
   font-family: "Montserrat", sans-serif; }
 
 p {

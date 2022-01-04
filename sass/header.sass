@@ -2,9 +2,8 @@
   position: relative
   margin-bottom: 7vw
   padding: 20px
-  padding-bottom: 0
-  background-image: linear-gradient(to bottom, $accent1 -50%, $accent2 95%)
-  // background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%)
+  padding-bottom: 50px
+  background-image: linear-gradient(to bottom right, $accent1 -10%, $accent2 100%)
   display: flex
   align-items: center
   z-index: 1
@@ -12,11 +11,15 @@
 .header-border
     position: absolute
     bottom: 0
-    transform: scaleX(-1) translateY(85%) scaleY(0.7)
+    transform: scaleX(-1)
     left: -20px
     // Account for padding
     width: calc(100% + 20px)
-    fill: $accent2
+    fill: $background-color
+
+    @media (min-width: 600px)
+      transform:  scale(-1, 0.6) translateY(36%)
+
 
 .header-menu
   flex-grow: 1
@@ -31,10 +34,18 @@
   li
     margin: 0 0.5rem
 
-    &:hover
-      font-weight: 500
+
 
   a
+    transition: all 0.1s ease-in-out
+
+    &:hover,
+    &:focus
+      @include white-hover-shadow
+      outline: none
+
+
+
     color: white
     text-decoration: none
     font-size: 1.5rem
