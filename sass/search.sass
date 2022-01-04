@@ -1,75 +1,73 @@
+$icon-width: 50px
+$icon-height: 50px
+
 form.searchform
-  height: 50px
-  width: 50px
   position: absolute
   right: 0
   transition: width 0.5s ease-in-out
   border-radius: 20px
   overflow: hidden
+  height: $icon-height
+  width: $icon-width
 
-form.hide-submit input[type="submit"]
-  display: none
 
 .search-text
-  outline: none
-  position: absolute
-  right: 50px
-  border: none
-  background-color: transparent
-  height: 50px
-  font-size: 30px
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7)60%, rgba(0,0,0,0))
-  border-radius: 20px
-  padding-left: 20px
-  padding-right: 50px
-  box-sizing: content-box
-  color: $text-color
-
-.search-toggle
+  @include clear-style
+  height: $icon-height
+  width: 100%
   position: absolute
   right: 0
-  padding: 0
-  border: none
-  background-color: transparent
+  color: $text-color
+  background-image: linear-gradient(to left,rgba(0,0,0,0) 50px, rgba(255, 255, 255, 0.7) 35% )
+  font-size: 30px
+  border-radius: 20px
+  padding-left: 20px
+  padding-right: 200px
+  box-sizing: border-box
+  outline: none
+  transition: all 2s
+
+.search-toggle
+  @include clear-style
+  position: absolute
+  right: 0
 
 .search-empty
+  @include clear-style
   position: absolute
-  right: 50px
-  border: none
-  background-color: transparent
-  height: 50px
-  padding: 0
+  right: $icon-width
+  height: $icon-height
   opacity: 0
+  z-index: 10
   transition: opacity 0.2s ease-in-out
 
+.search-icon, .close-icon
+  height: $icon-height
+  fill: $text-color-inverse
+  transition: transform 0.1s ease-in-out
+  &:hover, &:focus
+    transform: scale(1.1)
 
-.searchsubmit-container
+
+.search-submit
+  @include clear-style
   display: none
+  position: absolute
+  right: 0
+  z-index: -1
 
-form:focus-within
+
+form.searchform:focus-within
   width: 100%
-  .search-text
-    width: calc(100% - 100px)
-    left: 20px
-    right: 0
 
-  .searchsubmit-container
-    display: inline-block
-    position: absolute
-    right: 0
+  .search-submit
+    display: initial
+    z-index: 20
 
   .search-toggle
     display: none
 
   .search-empty
     opacity: 1
+    // delay appearing while the menu is opening.
     transition: opacity 0.2s 0.3s ease-in-out
-
-.search-icon, .close-icon
-  height: 50px
-  fill: white
-  transition: all 0.1s ease-in-out
-  cursor: pointer
-
-  &:hover, &:focus
-    transform: scale(1.1)
