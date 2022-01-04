@@ -1,22 +1,23 @@
-.custom-shape-divider-top-1641222853
+.header
+  position: relative
+  margin-bottom: 60px
+  background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%)
+
+.header-background svg
     position: absolute
-    top: 0
-    left: 0
+    bottom: 0
     width: 100%
-    overflow: hidden
-    line-height: 0
-    transform: rotate(180deg)
-    z-index: -1
-    min-width: 700px
+    fill: #185a9dff
+    transform: scaleX(-1) translateY(100%)
 
+.header-menu ul
+  display: flex
+  padding: 0
+  max-width: calc(45vw - 110px)
 
-
-.custom-shape-divider-top-1641222853 svg
-    position: relative
-    display: block
-    width: calc(252% + 1.3px)
-    height: 325px
-
-
-// .custom-shape-divider-top-1641222853 .shape-fill
-//     fill: #BD10E0
+  li
+    margin: 0 0.5rem
+    a
+      color: white
+      text-decoration: none
+      font-size: 1.5rem

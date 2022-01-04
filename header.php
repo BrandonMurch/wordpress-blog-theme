@@ -14,18 +14,10 @@
 <body>
 
 <header class="header">
-  <div class="custom-shape-divider-top-1641222853">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <defs>
-          <linearGradient x2="1" x1="0" y1="0" y2="1" id="purple-gradient">
-            <stop offset="0%" stop-color="#43cea2" />
-            <stop offset="100%" stop-color="#185a9d" />
-          </linearGradient>
-        </defs>
-background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
-
-          <path fill="url(#purple-gradient)" d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-      </svg>
+    <svg id="svg" viewBox="0 220 1440 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 0,500 C 0,500 0,250 0,250 C 189.86666666666667,259.6 379.73333333333335,269.2 554,253 C 728.2666666666667,236.8 886.9333333333334,194.80000000000004 1032,190 C 1177.0666666666666,185.19999999999996 1308.5333333333333,217.59999999999997 1440,250 C 1440,250 1440,500 1440,500 Z" stroke="none" stroke-width="0"  transform="rotate(-180 720 250)">
+      </path>
+    </svg>
   </div>
     <div class="logo-container">
       <a class="logo" href="<?php echo site_url(); ?>">
