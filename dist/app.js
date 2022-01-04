@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form-validation */ \"./js/form-validation.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./js/search.js\");\n\n\n\nObject(_form_validation__WEBPACK_IMPORTED_MODULE_0__[\"runFormValidation\"])();\nObject(_search__WEBPACK_IMPORTED_MODULE_1__[\"searchBarHandler\"])();\n\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form-validation */ \"./js/form-validation.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./js/search.js\");\n/* harmony import */ var _keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./keyboard-accessiblity.js */ \"./js/keyboard-accessiblity.js\");\n\n\n\n\nObject(_form_validation__WEBPACK_IMPORTED_MODULE_0__[\"runFormValidation\"])();\nObject(_search__WEBPACK_IMPORTED_MODULE_1__[\"searchBarHandler\"])();\nObject(_keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_2__[\"keyboardAccessibility\"])();\n\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ }),
 
@@ -110,6 +110,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./js/keyboard-accessiblity.js":
+/*!*************************************!*\
+  !*** ./js/keyboard-accessiblity.js ***!
+  \*************************************/
+/*! exports provided: keyboardAccessibility */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"keyboardAccessibility\", function() { return keyboardAccessibility; });\nconst keyboardAccessibility = () => {\n  jQuery(window).load(() => {\n    jQuery(window).on(\"keydown\", (e) => {\n      if (e.key == \"Enter\") {\n        document.activeElement.click();\n      }\n    });\n  });\n};\n\n\n//# sourceURL=webpack:///./js/keyboard-accessiblity.js?");
+
+/***/ }),
+
 /***/ "./js/search.js":
 /*!**********************!*\
   !*** ./js/search.js ***!
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst closeSearch = () => {\n  jQuery(\"#searchform\")[0].reset();\n  jQuery(\".searchform\").removeClass(\"search-open\");\n};\n\nconst openSearch = () => {\n  jQuery(\".searchform\").addClass(\"search-open\");\n  // Doesnt' look write if cursor appears immediately. It appears directly behind search icon. Wait until input has partially opened.\n  setTimeout(() => {\n    jQuery(\"#s\").focus();\n  }, 200);\n};\n\nconst stopSearchIfEmpty = (e) => {\n  if (jQuery(\"#s\").val() == \"\") {\n    e.preventDefault();\n    return false;\n  }\n};\n\nconst searchBarHandler = () => {\n  jQuery(window).load(() => {\n    jQuery(\".search-close\").on(\"click\", closeSearch);\n    jQuery(\".search-toggle\").on(\"click\", openSearch);\n    jQuery(\".searchsubmit-container\").on(\"click\", stopSearchIfEmpty);\n\n    jQuery(document).on(\"keydown\", (e) => {\n      if (e.key === \"Escape\") closeSearch();\n      if (e.key === \"Enter\") stopSearchIfEmpty(e);\n    });\n  });\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst emptySearch = () => {\n  jQuery(\"#searchform\")[0].reset();\n};\n\nconst closeSearch = () => {\n  emptySearch();\n  document.activeElement.blur();\n};\n\nconst stopSearchIfEmpty = (e) => {\n  if (jQuery(\"#s\").val() == \"\") {\n    e.preventDefault();\n    return false;\n  }\n};\n\nconst searchBarHandler = () => {\n  jQuery(window).load(() => {\n    jQuery(\".searchform\").on(\"focus-within\", () => {\n      console.log(\"TEST\");\n      jQuery(\"#searchform\")[0].reset();\n    });\n    jQuery(\".search-empty\").on(\"click\", emptySearch);\n    jQuery(\".searchsubmit-container\").on(\"click\", stopSearchIfEmpty);\n\n    jQuery(document).on(\"keydown\", (e) => {\n      if (e.key === \"Escape\") closeSearch();\n      if (e.key === \"Enter\") stopSearchIfEmpty(e);\n    });\n  });\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
 
 /***/ })
 

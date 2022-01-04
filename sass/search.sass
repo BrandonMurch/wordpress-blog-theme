@@ -32,7 +32,7 @@ form.hide-submit input[type="submit"]
   border: none
   background-color: transparent
 
-.search-close
+.search-empty
   position: absolute
   right: 50px
   border: none
@@ -46,7 +46,7 @@ form.hide-submit input[type="submit"]
 .searchsubmit-container
   display: none
 
-form.search-open
+form:focus-within
   width: 100%
   .search-text
     width: calc(100% - 100px)
@@ -61,7 +61,7 @@ form.search-open
   .search-toggle
     display: none
 
-  .search-close
+  .search-empty
     opacity: 1
     transition: opacity 0.2s 0.3s ease-in-out
 
@@ -71,5 +71,5 @@ form.search-open
   transition: all 0.1s ease-in-out
   cursor: pointer
 
-  &:hover
+  &:hover, &:focus
     transform: scale(1.1)

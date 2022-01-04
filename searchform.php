@@ -7,7 +7,7 @@
   <button type="button" name="button" role="presentation" class="search-toggle">
     <?php get_template_part("search-icon"); ?>
   </button>
-  <button type="button" name="button" role="presentation" class="search-close">
+  <button type="button" name="button" role="presentation" class="search-empty">
     <?php get_template_part("close-icon"); ?>
   </button>
   <label class="searchsubmit-container">

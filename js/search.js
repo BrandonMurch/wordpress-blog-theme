@@ -1,14 +1,10 @@
-const closeSearch = () => {
+const emptySearch = () => {
   jQuery("#searchform")[0].reset();
-  jQuery(".searchform").removeClass("search-open");
 };
 
-const openSearch = () => {
-  jQuery(".searchform").addClass("search-open");
-  // Doesnt' look write if cursor appears immediately. It appears directly behind search icon. Wait until input has partially opened.
-  setTimeout(() => {
-    jQuery("#s").focus();
-  }, 200);
+const closeSearch = () => {
+  emptySearch();
+  document.activeElement.blur();
 };
 
 const stopSearchIfEmpty = (e) => {
@@ -20,8 +16,11 @@ const stopSearchIfEmpty = (e) => {
 
 export const searchBarHandler = () => {
   jQuery(window).load(() => {
-    jQuery(".search-close").on("click", closeSearch);
-    jQuery(".search-toggle").on("click", openSearch);
+    jQuery(".searchform").on("focus-within", () => {
+      console.log("TEST");
+      jQuery("#searchform")[0].reset();
+    });
+    jQuery(".search-empty").on("click", emptySearch);
     jQuery(".searchsubmit-container").on("click", stopSearchIfEmpty);
 
     jQuery(document).on("keydown", (e) => {
