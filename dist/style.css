@@ -1,3 +1,45 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(4a799b111f608dbf4f89064d71292589.ttf);
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(02afb26fe72fcc05298817491c044b7b.ttf);
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(3cd786652b8a2e9d41f210cb1a527ff6.ttf);
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(079ca05d3ded9bc107ab8a8da013be22.ttf);
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(fa8441f345d83a0bc4ec345a6948dbb0.ttf);
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(1944c8d1a118759a443517c1337aafdc.ttf);
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(46e8b3d6aad6545789584deda0e29b75.ttf);
+  font-weight: 900;
+  font-style: normal; }
+
 .logo-container {
   background-color: rgba(0, 0, 0, 0.2);
   width: 90px;
@@ -5,7 +47,8 @@
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2); }
 
 .logo {
   font-size: 50px;
@@ -233,7 +276,8 @@ form.search-open {
       flex-basis: auto; } }
   .card-text-container .card-title {
     text-align: center;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-weight: bold; }
   .card-text-container .card-action {
     text-align: center;
     font-weight: bold;
@@ -313,7 +357,7 @@ form.search-open {
   margin-bottom: 7vw;
   padding: 20px;
   padding-bottom: 0;
-  background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%);
+  background-image: linear-gradient(to bottom, #34e89e -50%, #0f3443 95%);
   display: flex;
   align-items: center;
   z-index: 1; }
@@ -324,7 +368,7 @@ form.search-open {
   transform: scaleX(-1) translateY(85%) scaleY(0.7);
   left: -20px;
   width: calc(100% + 20px);
-  fill: #185a9dff; }
+  fill: #0f3443; }
 
 .header-menu {
   flex-grow: 1;
@@ -336,10 +380,12 @@ form.search-open {
     width: 100%; }
   .header-menu li {
     margin: 0 0.5rem; }
-    .header-menu li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem; }
+    .header-menu li:hover {
+      font-weight: 500; }
+  .header-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem; }
 
 .search-container {
   flex-grow: 100;
@@ -348,7 +394,8 @@ form.search-open {
   max-width: 500px; }
 
 body {
-  background-color: #EEE; }
+  background-color: #EEE;
+  font-family: "Montserrat", sans-serif; }
 
 p {
   line-height: 1.6; }
