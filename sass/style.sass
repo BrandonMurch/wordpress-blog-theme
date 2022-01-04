@@ -10,6 +10,7 @@
 @import "article"
 @import "tags"
 @import "header"
+@import "nav"
 
 
 body
@@ -21,6 +22,17 @@ p
 
 .hidden
   display: none
+
+.text-muted
+  color: $text-color-muted !important
+
+.btn-primary
+  background-color: lighten($accent2, 20%)
+
+  &:hover
+    background-color: lighten($accent2, 10%)
+
+
 
 @media (min-width: 900px)
   .container
