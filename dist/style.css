@@ -208,7 +208,7 @@ form.search-open {
     .card {
       flex-direction: column; } }
   .card:hover {
-    background-color: rgba(255, 255, 255, 0.3); }
+    filter: brightness(103%); }
 
 .card-image-wrapper {
   flex-basis: 400px;
@@ -314,6 +314,7 @@ form.search-open {
   position: relative;
   margin-bottom: 60px;
   padding: 20px;
+  padding-bottom: 0;
   background-image: linear-gradient(to bottom, #43cea2ff 5%, #185a9dff 95%);
   display: flex;
   align-items: center; }
