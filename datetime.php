@@ -41,6 +41,8 @@ function get_time_difference_string($date_string_1, $date_string_2)
             ($interval->s > 1 ? "seconds" : "second") .
             " ago";
     }
+
+    return "0 seconds ago";
 }
 
 ?>
