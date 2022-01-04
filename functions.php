@@ -47,7 +47,7 @@ add_action("wp_enqueue_scripts", "load_stylesheets");
 add_action("init", function () {
     register_nav_menus([
         "header" => __("Main Menu"),
-        "footer" => __("Footer Menu"),
+        // "footer" => __("Footer Menu"),
     ]);
 });
 
