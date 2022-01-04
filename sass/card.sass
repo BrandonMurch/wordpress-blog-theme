@@ -10,6 +10,7 @@
   align-items: stretch
   z-index: 5
 
+
   @media (min-width: 701px)
     &:nth-child(even)
       flex-direction: row-reverse
@@ -17,7 +18,7 @@
   @media (max-width: 700px)
     flex-direction: column
 
-  &:hover
+  &:hover, &:focus-within
     filter: brightness(103%)
 
 .card-image-wrapper
@@ -39,6 +40,15 @@
   flex-grow: 1
   padding: 1rem
 
+  .card-meta
+    color: $text-color-muted
+    opacity: 0.7
+
+  .card-excerpt
+    padding: 1rem
+    max-width: 70ch
+    text-align: center
+
   @media (max-width: 700px)
     flex-basis: auto
 
@@ -46,11 +56,14 @@
     text-align: center
     margin-bottom: 2rem
     font-weight: bold
+    color: $text-color
 
   .card-action
     text-align: center
     font-weight: bold
     font-size: 1.5rem
+    color: $text-color-muted
+    opacity: 0.9
 
 
 .card-link-overlay

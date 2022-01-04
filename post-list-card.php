@@ -14,16 +14,16 @@
         <h1 class="card-title">
         <?php esc_html(the_title()); ?>
         </h1>
-        <div class="row">
+        <div class="row card-meta">
           <div class="col text-center">
-            <p class="text-muted">Written by <br>
+            <p>Written by <br>
               <strong> <?php esc_html(the_author()); ?> </strong>
             </p>
             <p>
           </div>
 
           <div class="col text-center">
-            <p class="text-muted"> <?php echo $has_been_modifed
+            <p> <?php echo $has_been_modifed
                 ? "Last updated"
                 : "Created on"; ?> <br>
                 <strong><?php esc_html(the_modified_date()); ?></strong>
@@ -40,6 +40,7 @@
 
       <!-- allow link to span the entire card, only display text within the link for accessibilty readers -->
       <h2 class="card-action" aria-hidden>Click to read more</h2>
+
       <a href="<?php the_permalink(); ?>" class="card-link-overlay">
         <p class="hidden">Click to read more</p>
       </a>
