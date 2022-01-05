@@ -14,7 +14,7 @@
 
 
   <h1 class="text-center subtitle">Share this article: </h1>
-  <?php get_template_part("socials"); ?>
+  <?php get_template_part("partials/templates/socials"); ?>
 
   <h1 class="text-center subtitle">Read more about:</h1>
   <ul class="tag-list">

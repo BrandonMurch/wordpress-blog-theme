@@ -9,13 +9,13 @@
   <label class="screen-reader-text" for="s">Search for:</label>
   <input type="text" name="s" id="s" class="search-text" value="">
   <button type="button" role="presentation" class="search-toggle">
-     <?php get_template_part("search-icon"); ?>
+     <?php get_template_part("partials/svg-icons/search-icon"); ?>
   </button>
   <button type="reset" role="presentation" class="search-empty">
-    <?php get_template_part("close-icon"); ?>
+    <?php get_template_part("partials/svg-icons/close-icon"); ?>
   </button>
   <button type="submit" class="search-submit">
-    <?php get_template_part("search-icon"); ?>
+    <?php get_template_part("partials/svg-icons/search-icon"); ?>
   </button>
 
 </form>

@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/datetime.php";
+require __DIR__ . "/partials/functions/datetime.php";
 
 $fields = [
     "author" => '<div class="row">

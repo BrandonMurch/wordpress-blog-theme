@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/functions/avatar.php";
+require __DIR__ . "/partials/functions/avatar.php";
 
 function add_jquery()
 {

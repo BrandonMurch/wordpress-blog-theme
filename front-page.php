@@ -5,9 +5,9 @@
   <?php if (have_posts()):
       while (have_posts()):
           the_post();
-          get_template_part("post-list-card");
+          get_template_part("partials/templates/post-list-card");
       endwhile;
-      get_template_part("post-list-navigation");
+      get_template_part("partials/templates/post-list-navigation");
   endif; ?>
 
 </main>
