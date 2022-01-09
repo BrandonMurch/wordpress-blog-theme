@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form-validation */ \"./js/form-validation.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./js/search.js\");\n/* harmony import */ var _keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./keyboard-accessiblity.js */ \"./js/keyboard-accessiblity.js\");\n\n\n\n\nObject(_form_validation__WEBPACK_IMPORTED_MODULE_0__[\"runFormValidation\"])();\nObject(_search__WEBPACK_IMPORTED_MODULE_1__[\"searchBarHandler\"])();\nObject(_keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_2__[\"keyboardAccessibility\"])();\n\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _form_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form-validation */ \"./js/form-validation.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./js/search.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu */ \"./js/menu.js\");\n/* harmony import */ var _keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./keyboard-accessiblity.js */ \"./js/keyboard-accessiblity.js\");\n\n\n\n\n\nObject(_form_validation__WEBPACK_IMPORTED_MODULE_0__[\"runFormValidation\"])();\nObject(_search__WEBPACK_IMPORTED_MODULE_1__[\"searchBarHandler\"])();\nObject(_menu__WEBPACK_IMPORTED_MODULE_2__[\"menuHandler\"])();\nObject(_keyboard_accessiblity_js__WEBPACK_IMPORTED_MODULE_3__[\"keyboardAccessibility\"])();\n\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ }),
 
@@ -122,6 +122,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./js/menu.js":
+/*!********************!*\
+  !*** ./js/menu.js ***!
+  \********************/
+/*! exports provided: menuHandler */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"menuHandler\", function() { return menuHandler; });\nconst closeSubMenuWithEscape = (e) => {\n\tif (e.key == \"Escape\") {\n\t\tjQuery(\".sub-menu-open\").removeClass(\"sub-menu-open\");\n\t}\n};\n\nconst toggleSubMenu = (e) => {\n\tconst parentLinkItem = e.target.closest(\".menu-item-has-children\");\n\tif (parentLinkItem) {\n\t\tjQuery(parentLinkItem).toggleClass(\"sub-menu-open\");\n\t} else {\n\t\tjQuery(\".sub-menu-open\").removeClass(\"sub-menu-open\");\n\t}\n};\n\nconst menuHandler = () => {\n\tjQuery(window).load(() => {\n\t\tjQuery(\".menu-toggle\").on(\"click\", () => {\n\t\t\tjQuery(\".menu-wrapper\").toggleClass(\"menu-wrapper-open\");\n\t\t\tjQuery(\"html\").toggleClass(\"no-scroll\");\n\n\t\t\tif (jQuery(\".menu-wrapper\").hasClass(\"menu-wrapper-open\")) {\n\t\t\t\tdocument.addEventListener(\"click\", toggleSubMenu);\n\t\t\t\tdocument.addEventListener(\"keydown\", closeSubMenuWithEscape);\n\t\t\t} else {\n\t\t\t\tdocument.removeEventListener(\"click\", toggleSubMenu);\n\t\t\t\tdocument.removeEventListener(\"keydown\", closeSubMenuWithEscape);\n\t\t\t}\n\t\t});\n\t});\n};\n\n\n//# sourceURL=webpack:///./js/menu.js?");
+
+/***/ }),
+
 /***/ "./js/search.js":
 /*!**********************!*\
   !*** ./js/search.js ***!
@@ -130,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst closeSearch = () => {\n  jQuery(\"#searchform\")[0].reset();\n  document.activeElement.blur();\n};\n\nconst stopSearchIfEmpty = (e) => {\n  if (jQuery(\"#s\").val() == \"\") {\n    e.preventDefault();\n    return false;\n  }\n};\n\nconst searchBarHandler = () => {\n  jQuery(\".search-submit\").on(\"click\", stopSearchIfEmpty);\n\n  jQuery(document).on(\"keydown\", (e) => {\n    if (e.key === \"Escape\") closeSearch();\n    if (e.key === \"Enter\") stopSearchIfEmpty(e);\n  });\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst searchBarHandler = () => {\n\tjQuery(\".search-submit\").on(\"mousedown\", (e) => {\n\t\t// Stop blur if submit is pressed.\n\t\te.preventDefault();\n\t});\n\n\tjQuery(\"#s\").on(\"blur\", () => {\n\t\tjQuery(\"#searchform\")[0].reset();\n\t});\n\n\tjQuery(document).on(\"keydown\", (e) => {\n\t\tif (e.key === \"Escape\") document.activeElement.blur();\n\t});\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
 
 /***/ })
 

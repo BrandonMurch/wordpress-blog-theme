@@ -7,7 +7,7 @@
 >
 
   <label class="screen-reader-text" for="s">Search for:</label>
-  <input type="text" name="s" id="s" class="search-text" value="">
+  <input type="text" name="s" id="s" class="search-text" value="" required>
   <button type="button" role="presentation" class="search-toggle">
      <?php get_template_part("partials/svg-icons/search-icon"); ?>
   </button>

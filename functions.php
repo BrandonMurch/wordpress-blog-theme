@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . "/partials/functions/avatar.php";
+require __DIR__ . "/partials/functions/walker.php";
 
 function add_jquery()
 {

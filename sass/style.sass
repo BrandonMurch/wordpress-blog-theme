@@ -14,6 +14,12 @@
 @import "nav"
 
 
+html
+  overflow-x: hidden
+
+.no-scroll
+  overflow: hidden
+
 body
   background-color: $background-color
   font-family: "Montserrat", sans-serif
@@ -25,10 +31,14 @@ p
   display: none
 
 .btn-primary
-  background-color: lighten($accent2, 20%)
+  // background-color: lighten($accent2, 20%)
+  background-image: linear-gradient(to bottom right, $accent1, $accent2)
 
   &:hover
-    background-color: lighten($accent2, 10%)
+    // background-color: lighten($accent2, 10%)
+    background-image: linear-gradient(to bottom right, darken($accent1, 5%), lighten($accent2, 10%))
+    font-weight: 500
+
 
 
 
