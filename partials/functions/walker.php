@@ -6,8 +6,12 @@ class Walker_Nav_Main extends Walker_Nav_Menu
 	{
 		//  to make li elements focusable
 		$focusable = $args->walker->has_children ? "tabIndex ='0'" : "";
+		$no_children = $args->walker->has_children
+			? ""
+			: "menu-item-no-children ";
 		$output .=
 			"<li class=\"" .
+			$no_children .
 			implode(" ", $item->classes) .
 			"\"" .
 			$focusable .
@@ -17,9 +21,12 @@ class Walker_Nav_Main extends Walker_Nav_Menu
 			">";
 
 		if ($item->url && $item->url != "#") {
-			$output .= "<a href=" . esc_url($item->url) . ">";
+			$output .=
+				"<a class=\"menu-item-title\" href=" .
+				esc_url($item->url) .
+				">";
 		} else {
-			$output .= "<span>";
+			$output .= "<span class=\"menu-item-title\" >";
 		}
 
 		$output .= esc_html($item->title);
