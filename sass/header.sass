@@ -1,4 +1,4 @@
-.header
+header
   position: relative
   margin-bottom: 7vw
   padding: 30px 20px
@@ -7,19 +7,21 @@
   transition: all 1s ease-in-out
   z-index: 1
 
-.header-border
-    fill: $background-color
-    position: absolute
-    bottom: 0
-    transform: scaleX(-1)
-    left: -20px
-    // Account for padding
-    width: calc(100% + 20px)
+header .svg-border
+  fill: $background-color
+  position: absolute
+  bottom: 0
+  transform: scaleX(-1)
+  left: -20px
 
-    @media (min-width: 600px)
-      transform:  scale(-1, 0.6) translateY(36%)
-    @media (min-width: 1200px)
-      transform:  scale(-1, 0.4) translateY(78%)
+  // Account for padding
+  width: calc(100% + 20px)
 
-    @media (min-width: 1800px)
-      transform:  scale(-1, 0.2) translateY(200%)
+  @media (min-width: 600px)
+    transform: scale(-1, 0.6) translateY(36%)
+
+  @media (min-width: 1200px)
+    transform: scale(-1, 0.4) translateY(78%)
+
+  @media (min-width: 1800px)
+    transform: scale(-1, 0.2) translateY(200%)

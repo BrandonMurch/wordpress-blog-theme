@@ -13,10 +13,8 @@
 </head>
 <body>
 
-<header class="header">
-    <svg class="header-border" viewBox="0 530 900 70" xmlns="http://www.w3.org/2000/svg"  version="1.1">
-      <path d="M0 545L30 544.2C60 543.3 120 541.7 180 543.2C240 544.7 300 549.3 360 555.5C420 561.7 480 569.3 540 574.2C600 579 660 581 720 579C780 577 840 571 870 568L900 565L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z"></path>
-    </svg>
+<header>
+    <?php get_template_part("partials/templates/svg-border"); ?>
     <nav>
         <div class="search-container">
             <?php get_search_form(); ?>
