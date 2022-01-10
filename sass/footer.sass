@@ -8,9 +8,9 @@ footer
   min-height: 5vh
 
   .menu
+    +clear-style
+
     display: grid
-    margin: 0
-    padding: 0
     list-style: none
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
     grid-auto-flow: row dense
@@ -18,22 +18,22 @@ footer
     text-align: center
 
   .sub-menu
+    +clear-style
+
     display: flex
     flex-direction: column
     list-style: none
-    padding-left: 20px
 
   .menu-item-no-children
     order: 1
     grid-column: 1
 
-    &:last-of-type
-      margin-bottom: 20px
+  li.menu-item-no-children:last-of-type
+    margin-bottom: 20px
 
   .menu-item-has-children
     order: 2
     height: 100%
-    margin-bottom: 20px
 
     // span 10 rows, so that a single item doesn't occupy the same space as a sub menu
     grid-row: span 10
