@@ -10,7 +10,6 @@ nav
 .menu-wrapper
   flex-grow: 1
 
-
 // Sass for Main Header Menu ==================================================
 // Handles aligning the top level menu elements with the rest of the nav bar
 .header-menu
@@ -18,11 +17,14 @@ nav
   top: 10px
 
   ul
-    @include clear-style
+    +clear-style
+
     display: flex
 
   .menu-item
-    a, span, i
+    a,
+    span,
+    i
       font-size: 1.5rem
       color: white
       text-decoration: none
@@ -30,55 +32,56 @@ nav
 
       &:hover,
       &:focus
-        @include white-hover-shadow
+        +white-hover-shadow
+
         outline: none
 
 nav
-    // Handling sub-menu hiding and expansion =====================================
-    .menu-item-has-children
-      transition: all 0.5s ease-in-out
-      width: 100%
+  // Handling sub-menu hiding and expansion =====================================
+  .menu-item-has-children
+    transition: all 0.5s ease-in-out
+    width: 100%
 
-      .sub-menu
-        flex-direction: column
-        position: relative
-        bottom: 0
-        opacity: 0
-        height: 0
+    .sub-menu
+      flex-direction: column
+      position: relative
+      bottom: 0
+      opacity: 0
+      height: 0
+      width: 0
+      overflow: hidden
+
+    & > span
+      position: relative
+      margin-right: 15px
+
+      // Caret for dropdown toggle
+      &::after
+        content: " "
+        border-radius: 2px
+        transition: all 0.3s ease-in-out
+        position: absolute
+        right: -15px
+        top: 13px
         width: 0
+        height: 0
+        border: 6px solid transparent
+        border-top-color: $text-color-inverse
 
-      & > span
-          position: relative
-          margin-right: 15px
+  /* Sub menu can be opened either by hover or clicking (via JavaScript)
+  .sub-menu-open,
+  .menu-item-has-children:hover
+    background-color: rgba(255, 255, 255, 0.1)
 
-          // Caret for dropdown toggle
-          &::after
-            content: " "
-            border-radius: 2px
-            transition: all 0.3s ease-in-out
-            position: absolute
-            right: -15px
-            top: 13px
-            width: 0
-            height: 0
-            border: 6px solid transparent
-            border-top-color: $text-color-inverse
+    & > span::after
+      transform: rotate(-180deg)
+      top: 6px
 
-
-    // Sub menu can be opened either by hover or clicking (via JavaScript)
-    .sub-menu-open, .menu-item-has-children:hover
-        background-color: rgba(255,255,255,0.1)
-
-        & > span::after
-            transform: rotate(-180deg)
-            top: 6px
-
-        &> .sub-menu
-            opacity: 1
-            display: flex
-            height: auto
-            width: auto
-
+    & > .sub-menu
+      opacity: 1
+      display: flex
+      height: auto
+      width: auto
 
 .search-container
   flex-grow: 100
@@ -92,122 +95,115 @@ nav
     // Move logo out of the way for the search bar when open
     &:focus-within ~ .logo-container
       opacity: 0
-      transition: opacity 0.2s ease-in-out
-
+      transition: all 0.2s ease-in-out
 
 @media screen and (min-width: 751px)
-    // Only add left margin on top level elements
-    .header-menu > ul > li
-        margin-left: 15px
-
+  // Only add left margin on top level elements
+  .header-menu > ul > li
+    margin-left: 15px
 
 // Mobile Dropdown =============================================================
 @media (max-width: 750px)
+  nav
+    li.menu-item
+      margin: 1rem 0
 
-    nav
+      a,
+      span
+        font-size: 30px
+        cursor: pointer
 
-      li.menu-item
-        margin: 1rem 0
+    .sub-menu li
+      font-size: 20px
+      padding: 0
+      margin: 5px 0
 
-        a, span
-          font-size: 30px
-          cursor: pointer
+    .menu-wrapper
+      order: 2
+      height: 50px
+      transition: height 1.5s ease-in-out
 
-      .sub-menu li
-        font-size: 20px
-        padding: 0
-        margin:  5px 0
+    .header-menu
+      height: 100vh
+      width: 100vw
+      text-align: center
+      position: fixed
+      top: 100px
+      left: 0
+      margin: 0
+      opacity: 0
+      transition: opacity 0.3s 0.3s ease-in-out
+      pointer-events: none
 
-      .menu-wrapper
-        order: 2
-        height: 50px
-        transition: height 1.5s ease-in-out
+      & > ul
+        flex-direction: column
+
+    /* Sub-Menus ================================================================
+    .menu-item-has-children
+      width: 100vw
+      position: relative
+      margin: 0
+
+      // Lines on top and below active submenu
+      &:focus::before,
+      &:focus::after
+        content: " "
+        position: absolute
+        width: 100vw
+        left: 0
+        border: 1px solid rgba(255, 255, 255, 0.5)
+
+      &:focus::before
+        top: 0
+
+      &:focus::after
+        bottom: 0
+
+    /* Menu Toggle - "Hamburger Icon" ===============================================================
+    .menu-toggle
+      +clear-style
+
+      color: transparent
+      display: flex
+      flex-direction: column
+      margin: 5px 0
+      cursor: pointer
+      z-index: 2
+
+      &:hover
+        transform: scale(1.1)
+
+      .line
+        width: 40px
+        height: 5px
+        margin: 4px 0
+        border-radius: 20px
+        background-color: $text-color-inverse
+        transition: opacity 0.2s 0.7s ease-in-out, transform 0.7s ease-in-out, width 0.2s 0.7s ease-in-out, left 0.2s 0.7s ease-in-out
+
+        &:last-child
+          width: 20px
+          position: relative
+          left: 50%
+
+    /* Menu Opening =========================================================
+    .menu-wrapper-open
+      height: 100vh
 
       .header-menu
-        height: 100vh
-        width: 100vw
-        text-align: center
-        position: fixed
-        top: 100px
-        left: 0
-        margin: 0
-        opacity: 0
-        transition: opacity 0.3s 0.3s ease-in-out
-        pointer-events: none
+        opacity: 1
+        pointer-events: all
 
-        & > ul
-          flex-direction: column
+      .line
+        transition: opacity 0.2s ease-in-out, transform 0.7s 0.2s ease-in-out, width 0.2s ease-in-out, left 0.2s ease-in-out
 
-
-
-      // Sub-Menus ================================================================
-      .menu-item-has-children
-        width: 100vw
-        position: relative
-        margin: 0
-
-        // Lines on top and below active submenu
-        &:focus::before,
-        &:focus::after
-          content: ' '
-          position: absolute
-          width: 100vw
-          left: 0
-          border: 1px solid rgba(255,255,255,0.5)
-
-        &:focus::before
-          top: 0
-
-        &:focus::after
-          bottom: 0
-
-
-      // Menu Toggle - "Hamburger Icon" ===============================================================
-
-      .menu-toggle
-        @include clear-style
-        color: transparent
-        display: flex
-        flex-direction: column
-        margin: 5px 0
-        cursor: pointer
-        z-index: 2
-
-        &:hover
-          transform: scale(1.1)
-
-        .line
-          width: 40px
-          height: 5px
-          margin: 4px 0
-          border-radius: 20px
-          background-color: $text-color-inverse
-          transition: opacity 0.2s 0.7s ease-in-out, transform 0.7s ease-in-out, width 0.2s 0.7s ease-in-out, left 0.2s 0.7s ease-in-out
-
-          &:last-child
-            width: 20px
-            position: relative
-            left: 50%
-
-
-      // Menu Opening =========================================================
-      .menu-wrapper-open
-        height: 100vh
-
-        .header-menu
-          opacity: 1
-          pointer-events: all
-
-        .line
-          transition: opacity 0.2s ease-in-out, transform 0.7s 0.2s ease-in-out, width 0.2s ease-in-out, left 0.2s ease-in-out
-
-          &:first-child
+        &:first-child
           transform: translateY(13px) rotate(45deg)
 
-          &:nth-child(2)
-            opacity: 0
+        &:nth-child(2)
+          opacity: 0
 
-          &:last-child
-            width: 40px
-            left: 0
-            transform: translateY(-13px) rotate(315deg)
+        &:last-child
+          width: 40px
+          left: 0
+          transform: translateY(-13px) rotate(315deg)
