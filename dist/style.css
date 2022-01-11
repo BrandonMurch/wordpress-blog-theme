@@ -41,27 +41,32 @@
   font-style: normal;
 }
 .logo-container {
-  width: 130px;
-  height: 50px;
+  width: 100px;
   cursor: pointer;
+  z-index: 5;
+  overflow: hidden;
+  transition: all 0.2s 0.2s ease-in-out;
 }
 .logo-container:hover .logo {
   text-shadow: -0.4px -0.4px 0 white, 0.4px -0.4px 0 white, -0.4px 0.4px 0 white, 0.4px 0.4px 0 white;
   cursor: pointer;
   color: white;
 }
-@media screen and (max-width: 500px) {
-  .logo-container {
-    position: absolute;
-    opacity: 1;
-    transition: opacity 0.2s 0.2s ease-in-out;
-  }
-}
 
 .logo {
   font-size: 60px;
+  text-decoration: underline;
   color: white;
   line-height: 45px;
+  text-transform: lowercase;
+}
+
+.custom-logo {
+  max-height: 100px;
+  max-width: 100px;
+}
+.custom-logo:hover {
+  transform: scale(1.1);
 }
 
 .comment-list-container {
@@ -183,17 +188,17 @@ form.searchform {
   z-index: -1;
 }
 
-form.searchform:focus-within {
+form.searchform:focus-within, form.searchform:focus {
   width: 100%;
 }
-form.searchform:focus-within .search-submit {
+form.searchform:focus-within .search-submit, form.searchform:focus .search-submit {
   display: initial;
   z-index: 20;
 }
-form.searchform:focus-within .search-toggle {
+form.searchform:focus-within .search-toggle, form.searchform:focus .search-toggle {
   display: none;
 }
-form.searchform:focus-within .search-empty {
+form.searchform:focus-within .search-empty, form.searchform:focus .search-empty {
   opacity: 1;
   transition: opacity 0.2s 0.3s ease-in-out;
 }
@@ -603,18 +608,27 @@ nav {
   margin: 0;
   display: flex;
 }
-.header-menu .menu-item a, .header-menu .menu-item span, .header-menu .menu-item i {
+.header-menu .menu-item a,
+.header-menu .menu-item span,
+.header-menu .menu-item i {
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
 }
-.header-menu .menu-item a:hover, .header-menu .menu-item a:focus, .header-menu .menu-item span:hover, .header-menu .menu-item span:focus, .header-menu .menu-item i:hover, .header-menu .menu-item i:focus {
+.header-menu .menu-item a:hover, .header-menu .menu-item a:focus,
+.header-menu .menu-item span:hover,
+.header-menu .menu-item span:focus,
+.header-menu .menu-item i:hover,
+.header-menu .menu-item i:focus {
   text-shadow: -0.4px -0.4px 0 white, 0.4px -0.4px 0 white, -0.4px 0.4px 0 white, 0.4px 0.4px 0 white;
   cursor: pointer;
   outline: none;
 }
 
+nav {
+  /* Sub menu can be opened either by hover or clicking (via JavaScript) */
+}
 nav .menu-item-has-children {
   transition: all 0.5s ease-in-out;
   width: 100%;
@@ -626,6 +640,7 @@ nav .menu-item-has-children .sub-menu {
   opacity: 0;
   height: 0;
   width: 0;
+  overflow: hidden;
 }
 nav .menu-item-has-children > span {
   position: relative;
@@ -643,14 +658,17 @@ nav .menu-item-has-children > span::after {
   border: 6px solid transparent;
   border-top-color: white;
 }
-nav .sub-menu-open, nav .menu-item-has-children:hover {
+nav .sub-menu-open,
+nav .menu-item-has-children:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-nav .sub-menu-open > span::after, nav .menu-item-has-children:hover > span::after {
+nav .sub-menu-open > span::after,
+nav .menu-item-has-children:hover > span::after {
   transform: rotate(-180deg);
   top: 6px;
 }
-nav .sub-menu-open > .sub-menu, nav .menu-item-has-children:hover > .sub-menu {
+nav .sub-menu-open > .sub-menu,
+nav .menu-item-has-children:hover > .sub-menu {
   opacity: 1;
   display: flex;
   height: auto;
@@ -667,8 +685,8 @@ nav .sub-menu-open > .sub-menu, nav .menu-item-has-children:hover > .sub-menu {
 }
 @media (max-width: 500px) {
   .search-container:focus-within ~ .logo-container {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    width: 0;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -678,10 +696,16 @@ nav .sub-menu-open > .sub-menu, nav .menu-item-has-children:hover > .sub-menu {
   }
 }
 @media (max-width: 750px) {
+  nav {
+    /* Sub-Menus ================================================================ */
+    /* Menu Toggle - "Hamburger Icon" =============================================================== */
+    /* Menu Opening ========================================================= */
+  }
   nav li.menu-item {
     margin: 1rem 0;
   }
-  nav li.menu-item a, nav li.menu-item span {
+  nav li.menu-item a,
+nav li.menu-item span {
     font-size: 30px;
     cursor: pointer;
   }
@@ -765,6 +789,8 @@ nav .sub-menu-open > .sub-menu, nav .menu-item-has-children:hover > .sub-menu {
   }
   nav .menu-wrapper-open .line {
     transition: opacity 0.2s ease-in-out, transform 0.7s 0.2s ease-in-out, width 0.2s ease-in-out, left 0.2s ease-in-out;
+  }
+  nav .menu-wrapper-open .line:first-child {
     transform: translateY(13px) rotate(45deg);
   }
   nav .menu-wrapper-open .line:nth-child(2) {

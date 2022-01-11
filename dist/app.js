@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst searchBarHandler = () => {\n\tjQuery(\".search-submit\").on(\"mousedown\", (e) => {\n\t\t// Stop blur if submit is pressed.\n\t\te.preventDefault();\n\t});\n\n\tjQuery(\"#s\").on(\"blur\", () => {\n\t\tjQuery(\"#searchform\")[0].reset();\n\t});\n\n\tjQuery(document).on(\"keydown\", (e) => {\n\t\tif (e.key === \"Escape\") document.activeElement.blur();\n\t});\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchBarHandler\", function() { return searchBarHandler; });\nconst searchBarHandler = () => {\n\tjQuery(\".search-submit\").on(\"mousedown\", (e) => {\n\t\t// Stop blur if submit is pressed.\n\t\te.preventDefault();\n\t});\n\n\tjQuery(\"#s\").on(\"blur\", () => {\n\t\tjQuery(\"#searchform\")[0].reset();\n\t});\n\n\t// Javascript work-around for chrome-based browsers since they don't seem to allow focus-within a form using a button. Have tried placing tabIndex on all interior elements, no change.\n\tjQuery(\".searchform\").on(\"click\", () => {\n\t\tjQuery(\"#s\").focus();\n\t});\n\n\tjQuery(document).on(\"keydown\", (e) => {\n\t\tif (e.key === \"Escape\") document.activeElement.blur();\n\t});\n};\n\n\n//# sourceURL=webpack:///./js/search.js?");
 
 /***/ })
 

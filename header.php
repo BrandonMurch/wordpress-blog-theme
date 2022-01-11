@@ -14,6 +14,9 @@
 <body>
 
 <header>
+
+
+
     <?php get_template_part("partials/templates/svg-border"); ?>
     <nav>
         <div class="search-container">
@@ -21,9 +24,27 @@
         </div>
 
       <div class="logo-container">
-        <a class="logo" href="<?php echo site_url(); ?>">
-          bm
-        </a>
+        <?php if (has_custom_logo()) {
+        	the_custom_logo();
+        } else {
+        	$title_logo = "";
+        	$title_words = explode(" ", get_bloginfo("name"));
+        	foreach ($title_words as $word) {
+        		$title_logo .= $word[0];
+        	}
+
+        	if (is_home()) {
+        		echo "<span class=\"logo\">" . $title_logo . "</span>";
+        	} else {
+        		echo "<a class=\"logo\" href=\"" .
+        			site_url() .
+        			"\">" .
+        			$title_logo .
+        			"</a>";
+        	}
+        } ?>
+
+
       </div>
 
       <div class="menu-wrapper">

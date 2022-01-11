@@ -10,15 +10,15 @@ form.searchform
   height: $icon-height
   width: $icon-width
 
-
 .search-text
-  @include clear-style
+  +clear-style
+
   height: $icon-height
   width: 100%
   position: absolute
   right: 0
   color: $text-color
-  background-image: linear-gradient(to left,rgba(0,0,0,0) 50px, rgba(255, 255, 255, 0.7) 35% )
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 50px, rgba(255, 255, 255, 0.7) 35%)
   font-size: 30px
   border-radius: 20px
   padding-left: 20px
@@ -28,12 +28,14 @@ form.searchform
   transition: all 2s
 
 .search-toggle
-  @include clear-style
+  +clear-style
+
   position: absolute
   right: 0
 
 .search-empty
-  @include clear-style
+  +clear-style
+
   position: absolute
   right: $icon-width
   height: $icon-height
@@ -45,19 +47,19 @@ form.searchform
   height: $icon-height
   fill: $text-color-inverse
   transition: transform 0.1s ease-in-out
+
   &:hover, &:focus
     transform: scale(1.1)
 
-
 .search-submit
-  @include clear-style
+  +clear-style
+
   display: none
   position: absolute
   right: 0
   z-index: -1
 
-
-form.searchform:focus-within
+form.searchform:focus-within, form.searchform:focus
   width: 100%
 
   .search-submit
@@ -69,5 +71,6 @@ form.searchform:focus-within
 
   .search-empty
     opacity: 1
+
     // delay appearing while the menu is opening.
     transition: opacity 0.2s 0.3s ease-in-out

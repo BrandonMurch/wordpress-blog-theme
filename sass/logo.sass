@@ -1,19 +1,25 @@
 .logo-container
-    width: 130px
-    height: 50px
-    cursor: pointer
+  width: 100px
+  cursor: pointer
+  z-index: 5
+  overflow: hidden
+  transition: all 0.2s 0.2s ease-in-out
 
-    &:hover .logo
-        @include white-hover-shadow
-        color: white
+  &:hover .logo
+    +white-hover-shadow
 
-    // Move out of the way for search bar when open
-    @media screen and (max-width: 500px)
-        position: absolute
-        opacity: 1
-        transition: opacity 0.2s 0.2s ease-in-out
+    color: white
 
 .logo
   font-size: 60px
+  text-decoration: underline
   color: white
   line-height: 45px
+  text-transform: lowercase
+
+.custom-logo
+  max-height: 100px
+  max-width: 100px
+
+  &:hover
+    transform: scale(1.1)
