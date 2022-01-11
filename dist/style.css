@@ -582,6 +582,14 @@ footer .svg-border {
   }
 }
 
+.footer-menu-simple {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 nav {
   display: flex;
   align-items: flex-start;
