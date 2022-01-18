@@ -5,7 +5,7 @@ require __DIR__ . "/partials/functions/walker.php";
 require __DIR__ . "/partials/functions/featured-images.php";
 require __DIR__ . "/partials/functions/enqueue-scripts.php";
 require __DIR__ . "/partials/functions/custom-logo.php";
-require __DIR__ . "/partials/functions/customizer.php";
+require __DIR__ . "/partials/functions/customizer-colours.php";
 
 add_action("init", function () {
 	register_nav_menus([
