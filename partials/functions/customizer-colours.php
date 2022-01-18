@@ -1,5 +1,13 @@
 <?php
 
+function get_theme_defaults()
+{
+	return [
+		"primary_colour" => "#30cfd0",
+		"secondary_colour" => "#330867",
+	];
+}
+
 function load_colour_section($wp_customize)
 {
 	$wp_customize->add_section("colours", [
