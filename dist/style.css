@@ -475,7 +475,7 @@ header {
   margin-bottom: 7vw;
   padding: 30px 20px;
   padding-bottom: 50px;
-  background-image: linear-gradient(to bottom right, #30cfd0 -10%, #330867 100%);
+  background-image: linear-gradient(to bottom right, var(--accent1) -10%, var(--accent2) 100%);
   transition: all 1s ease-in-out;
   z-index: 1;
 }
@@ -508,7 +508,7 @@ footer {
   position: relative;
   margin-top: 7vw;
   padding: 50px 30px 20px 30px;
-  background-image: linear-gradient(to top left, #30cfd0 -10%, #330867 100%);
+  background-image: linear-gradient(to top left, var(--accent1) -10%, var(--accent2) 100%);
   transition: all 1s ease-in-out;
   z-index: 1;
   min-height: 5vh;
@@ -834,10 +834,12 @@ p {
 }
 
 .btn-primary {
-  background-image: linear-gradient(to bottom right, #30cfd0, #330867);
+  background-image: linear-gradient(to bottom right, var(--accent1), var(--accent2));
+  position: relative;
 }
 .btn-primary:hover {
-  background-image: linear-gradient(to bottom right, #2bbbbc, #4a0c96);
+  filter: brightness(93%);
+  box-shadow: #969696 1px 1px 2px 0 inset, rgba(200, 200, 200, 0.5) -1px -1px 2px 1px inset;
   font-weight: 500;
 }
 

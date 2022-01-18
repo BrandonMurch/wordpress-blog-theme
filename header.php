@@ -11,7 +11,10 @@
     <meta name="description" content="<?php bloginfo("description"); ?>">
     <?php wp_head(); ?>
 </head>
-<body>
+
+<?php require __DIR__ . "/partials/styles/css-variables.php"; ?>
+
+<body style=" <?php echo get_global_styles(); ?>">
 
 <header>
 
